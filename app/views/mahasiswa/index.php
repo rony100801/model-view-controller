@@ -4,16 +4,16 @@
       <h3 class="fs-2">Daftar Mahasiswa</h3>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <?php foreach ($data["mahasiswa"] as $mhs) : ?>
-        <ul>
-          <li>NIM : <?= $mhs["nim"] ?></li>
-          <li>Nama : <?= $mhs["nama"] ?></li>
-          <li>Jurusan : <?= $mhs["jurusan"] ?></li>
-          <li>Email : <?= $mhs["email"] ?></li>
-        </ul>
-      <?php endforeach; ?>
+  <div class="row mt-3">
+    <div class="col-md-5">
+      <ul class="list-group">
+        <?php foreach ($data["mahasiswa"] as $mhs) : ?>
+          <li class="list-group-item d-flex justify-content-between">
+            <?= $mhs["nama"] ?>
+            <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs["id"] ?>" class="badge text-bg-primary text-decoration-none">Detail</a>
+          </li>
+        <?php endforeach; ?>
+      </ul>
     </div>
   </div>
 </div>
